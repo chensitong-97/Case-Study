@@ -1,3 +1,3 @@
-# Case_itself_KEL700-PDF-ENG
+# Econometrics Case Study
 Group 12
 Case Study
