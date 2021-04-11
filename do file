@@ -1,4 +1,7 @@
 //Group 12 Case do file
+
+
+
 //Set the Stage
 
 //import the dataset
@@ -20,4 +23,14 @@ ci mean ROI, level(95)
 
 
 //2.c   Show that the mean U.S. ROI is significantly larger than the 12 percent London cited. 
+//The mean of ROI is 29.29%, range between 13.48% and 45.1%
+//We set H0 is mean = 0.12, Ha is mean != 0.12
+ttest ROI == 0.12
+//The P value is 0.0325, which is smaller than 0.05, so we can reject the null hypothesis
 
+
+//--------------------------------------------------------------------------------------------------------
+
+//Before Production
+
+//3.a.Compare the total U.S. box-office gross of movies from the comedy genre with movies from other genres. Is there a statistically significant difference between the total U.S. gross of comedies and non-comedy movies? 
