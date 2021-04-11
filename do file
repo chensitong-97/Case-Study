@@ -5,7 +5,7 @@
 
 
 //1. To obtain an initial overview of the data, calculate the minimum, average, and maximum values of the variables—opening gross, total U.S. gross, total non-U.S. gross, and opening theatres. How many of the movies in the data set are comedies and how many movies are R-rated? 
-sum OpeningGross TotalUSGross TotalNonUSGross OpeningTheatres
+tabstat OpeningGross TotalUSGross TotalNonUSGross OpeningTheatres, stat(min mean max) f(%10.0f)
 tab Genre
 tab MPAA
 
