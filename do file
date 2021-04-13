@@ -29,8 +29,26 @@ ttest ROI == 0.12
 //The P value is 0.0325, which is smaller than 0.05, so we can reject the null hypothesis
 
 
-//--------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Before Production
 
 //3.a.Compare the total U.S. box-office gross of movies from the comedy genre with movies from other genres. Is there a statistically significant difference between the total U.S. gross of comedies and non-comedy movies? 
+
+
+//3.b.Griffith was not so sure about the results, because they were contrary to his gut feelings. Maybe higher revenue accompanied higher investments? Calculate additionally the difference of U.S. ROIs from movies of the comedy genre and of other movie genres. Is there a statistically significant difference between the U.S. ROIs? 
+
+
+//4.a.Is there a statistically significant difference between the total U.S. gross of R-rated movies and movies with other ratings?
+
+
+//5.a.Based on the described beliefs, determine a sound regression model predicting total U.S. box-office gross of movies prior to production. 
+
+
+//5.b.Drop all variables from the regression that are not significant at a 10 percent level of significance. Report the final regression.
+
+
+//5.c.Holding all other explanatory variables in your regression fixed, which movies have higher total U.S. gross, those that are a sequel or those that are not?
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
