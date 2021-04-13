@@ -40,20 +40,42 @@ ttest ROI == 0.12
 
 //3.a.Compare the total U.S. box-office gross of movies from the comedy genre with movies from other genres. Is there a statistically significant difference between the total U.S. gross of comedies and non-comedy movies? 
 
+gen Genre_Comedy = 0
+replace Genre_Comedy = 1 if Genre=="Comedy"
+ttest TotalUSGross, by(Genre_Comedy)
+//P-value is 0.1940>0.05, therefore there is no statistically significant difference between the total U.S. gross of comedies and non-comedy movies
+
 
 //3.b.Griffith was not so sure about the results, because they were contrary to his gut feelings. Maybe higher revenue accompanied higher investments? Calculate additionally the difference of U.S. ROIs from movies of the comedy genre and of other movie genres. Is there a statistically significant difference between the U.S. ROIs? 
+
+ttest ROI, by(Genre_Comedy)
+//the difference of mean is 0.5401722-0.1835754
+//The P-value is 0.0374>0.05, so it proves that there is a statistically significant. 
 
 
 //4.a.Is there a statistically significant difference between the total U.S. gross of R-rated movies and movies with other ratings?
 
+ttest TotalUSGross, by(MPAA_D)
+//P-value is 0.5026>0.05, so there is not a statistically significant. The mean of R-rated is lower than that of non R-rated (5.33 and 6.12)
+
 
 //5.a.Based on the described beliefs, determine a sound regression model predicting total U.S. box-office gross of movies prior to production. 
+
+gen lnTotalUSGross = ln(TotalUSGross)
+regress lnTotalUSGross Budget Genre_Comedy MPAA_D Sequel KnownStory,robust
+//The sound regression model may be lnTotalUSGross = 16.87535 + 1.41e^(-8)Budget + 0.3374525Genre_Comedy + 0.0684639MPAA_D + 0.533817Sequel - 0.1265828KnownStory
 
 
 //5.b.Drop all variables from the regression that are not significant at a 10 percent level of significance. Report the final regression.
 
+//Check the P-value for each term, we drop the term that with a P-value greater than 0.1 (10% level of significance)
+regress lnTotalUSGross Budget Genre_Comedy Sequel,robust
+//The final regression model should be lnTotalUSGross = 16.84244 + 1.41e^(-8)Budget + 0.3288883Genre_Comedy +  0.5698926Sequel
+
 
 //5.c.Holding all other explanatory variables in your regression fixed, which movies have higher total U.S. gross, those that are a sequel or those that are not?
+
+//Because the coef. of Sequel is 0.5747454, which is greater than 0. In this case, sequel movies will have higher total U.S. gross.
 
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
