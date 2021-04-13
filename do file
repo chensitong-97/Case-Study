@@ -98,6 +98,7 @@ reg lnOpeningGross Budget Sequel Summer OpeningTheatres,robust
 
 //6.d.Suppose the number of movie theatres showing a movie on the opening weekend increases by one hundred. Provide a point estimate and a 95 percent confidence interval for the expected change in the opening weekend box-office revenue.
 
+regress lnOpeningGross OpeningTheatres,robust
 
 
 //7.a.Run a simple linear regression predicting total U.S. box-office gross from opening weekend box-office gross.
@@ -119,5 +120,33 @@ reg lnOpeningGross Budget Sequel Summer OpeningTheatres,robust
 
 
 //7.g.What proportion of the variation in total U.S. box-office gross revenue can be explained by variation in the opening weekend box-office gross revenue? 
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//After Opening Weekend
+
+
+//8.a.Determine a sound regression model predicting total U.S. box-office gross revenue. Consider all factors known after the opening weekend, including those known before production and those known only before opening weekend, as well as the opening box office gross and the critics’ opinion score.
+
+
+//8.b.Drop all variables from the regression that are not significant at a 10 percent level of significance. Report the final regression.
+
+
+//8.c.Consider a movie with the characteristics of Flags of Our Fathers. Using the regression from part (b), provide a point estimate and a 95 percent prediction interval for the total U.S. gross revenue of a movie with such characteristics.
+
+
+
+//8.d.Advise Griffith on how much he should be willing to invest in order to influence the critics to gain an extra ten points in the opinion score of a movie with the characteristics of Flags of Our Fathers, thereby earning such a film a score of eighty-nine points instead of seventy-nine points.
+
+
+
+//9.a.Modify your regression from Question 8 to examine Griffith’s claim. Can you prove his theory?
+
+
+//10.a.Consider a variable called “star power” that reports the number of A-list stars for a movie. If you had data for this variable and added it to your regression from Question 9, what would have to be true for the slope coefficient of star power and how would the slope coefficient of the budget variable have to change for Griffith’s conclusion to be correct? 
+
+
 
 
