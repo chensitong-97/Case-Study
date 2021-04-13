@@ -118,17 +118,29 @@ reg TotalUSGross OpeningGross, robust
 test OpeningGross=4
 
 
-
 //7.d.Critique the statistical analysis in part (c). 
+
+//H0: beta1=4 , Ha: beta1 != 4
+//算出t值，和critical t对比
+//H0 can be rejected
 
 
 //7.e.Determine a sound regression model predicting total U.S. box-office gross from opening weekend box-office gross. 
 
+gen lnTotalUSGross = ln(TotalUSGross)
+reg lnTotalUSGross lnOpeningGross, robust
+//Ln(TotalUSGross) = 16.8730 + 4.72*10^(-8)OpeningGross
 
 //7.f.Examine the validity of the age-old wisdom using the new regression. 
 
+test lnOpeningGross = 4
+
+
 
 //7.g.What proportion of the variation in total U.S. box-office gross revenue can be explained by variation in the opening weekend box-office gross revenue? 
+
+//用不用R-squared检验？
+
 
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -139,11 +151,17 @@ test OpeningGross=4
 
 //8.a.Determine a sound regression model predicting total U.S. box-office gross revenue. Consider all factors known after the opening weekend, including those known before production and those known only before opening weekend, as well as the opening box office gross and the critics’ opinion score.
 
+reg lnTotalUSGross Budget Genre_Comedy MPAA_D Sequel KnownStory Summer Holiday Christmas OpeningTheatres OpeningGross CriticsOpinion,robust
+
 
 //8.b.Drop all variables from the regression that are not significant at a 10 percent level of significance. Report the final regression.
 
+//参考第五题
+//reg lnTotalUSGross Budget Genre_Comedy Summer OpeningTheatres OpeningGross CriticsOpinion,robust
+
 
 //8.c.Consider a movie with the characteristics of Flags of Our Fathers. Using the regression from part (b), provide a point estimate and a 95 percent prediction interval for the total U.S. gross revenue of a movie with such characteristics.
+
 
 
 
