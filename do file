@@ -99,15 +99,24 @@ reg lnOpeningGross Budget Sequel Summer OpeningTheatres,robust
 //6.d.Suppose the number of movie theatres showing a movie on the opening weekend increases by one hundred. Provide a point estimate and a 95 percent confidence interval for the expected change in the opening weekend box-office revenue.
 
 regress lnOpeningGross OpeningTheatres,robust
+lincom OpeningTheatres*100 + _cons
 
 
 //7.a.Run a simple linear regression predicting total U.S. box-office gross from opening weekend box-office gross.
 
+reg TotalUSGross OpeningGross, robust
+
 
 //7.b.If the stronger version of that age-old wisdom were true, that is, if indeed 25 percent of a movie’s U.S. box-office gross revenue came in during the opening weekend, what would the value of the slope coefficient in the linear regression model have to be?
 
+//25% TotalUSGross=OpeningGross
+//TotalUSGross=4*OpeningGross
+
 
 //7.c.Can the age-old wisdom be rejected based on the simple linear regression? 
+
+test OpeningGross=4
+
 
 
 //7.d.Critique the statistical analysis in part (c). 
