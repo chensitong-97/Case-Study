@@ -79,3 +79,45 @@ regress lnTotalUSGross Budget Genre_Comedy Sequel,robust
 
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Before Opening Weekend
+
+//6.a.Determine a sound regression model predicting opening weekend box-office gross revenue. Consider both the preproduction success factors as well as the factors describing the opening weekend.
+
+gen lnOpeningGross=ln(OpeningGross)
+regress lnOpeningGross Budget Genre_Comedy MPAA_D Sequel KnownStory Summer Holiday Christmas OpeningTheatres, robust
+
+
+//6.b.Drop all variables from the regression that are not significant at a 10 percent level of significance. Report the final regression.
+
+reg lnOpeningGross Budget Sequel Summer OpeningTheatres,robust
+
+
+//6.c.Carefully interpret the slope coefficient of each variable in the regression. 
+
+
+//6.d.Suppose the number of movie theatres showing a movie on the opening weekend increases by one hundred. Provide a point estimate and a 95 percent confidence interval for the expected change in the opening weekend box-office revenue.
+
+
+
+//7.a.Run a simple linear regression predicting total U.S. box-office gross from opening weekend box-office gross.
+
+
+//7.b.If the stronger version of that age-old wisdom were true, that is, if indeed 25 percent of a movie’s U.S. box-office gross revenue came in during the opening weekend, what would the value of the slope coefficient in the linear regression model have to be?
+
+
+//7.c.Can the age-old wisdom be rejected based on the simple linear regression? 
+
+
+//7.d.Critique the statistical analysis in part (c). 
+
+
+//7.e.Determine a sound regression model predicting total U.S. box-office gross from opening weekend box-office gross. 
+
+
+//7.f.Examine the validity of the age-old wisdom using the new regression. 
+
+
+//7.g.What proportion of the variation in total U.S. box-office gross revenue can be explained by variation in the opening weekend box-office gross revenue? 
+
+
