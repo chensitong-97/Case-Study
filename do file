@@ -39,7 +39,9 @@ ttest ROI == 0.12
 //Before Production
 
 //3.a.Compare the total U.S. box-office gross of movies from the comedy genre with movies from other genres. Is there a statistically significant difference between the total U.S. gross of comedies and non-comedy movies? 
-
+gen Comedy=0
+replace Comedy=1 if Genre=="Comedy"
+ttest TotalUSGross,by(Comedy)
 
 //3.b.Griffith was not so sure about the results, because they were contrary to his gut feelings. Maybe higher revenue accompanied higher investments? Calculate additionally the difference of U.S. ROIs from movies of the comedy genre and of other movie genres. Is there a statistically significant difference between the U.S. ROIs? 
 
