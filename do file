@@ -8,6 +8,7 @@
 
 
 //1. To obtain an initial overview of the data, calculate the minimum, average, and maximum values of the variables—opening gross, total U.S. gross, total non-U.S. gross, and opening theatres. How many of the movies in the data set are comedies and how many movies are R-rated? 
+
 tabstat OpeningGross TotalUSGross TotalNonUSGross OpeningTheatres, stat(min mean max) f(%10.0f)
 tab Genre
 tab MPAA
@@ -15,17 +16,21 @@ tab MPAA
 //2.Michael London (of Sideways fame) declared in The Hollywood Reporter, “The studio business historically returns around 12 percent a year.” Griffith knew any investor would want justification for such a statement. 
 
 //2.a   Calculate the U.S. return on investment (ROI) (simply defined as the difference of total U.S. box-office gross and budget divided by budget, ignoring any form of discounting) for each movie in the data set. 
+
 gen ROI=(TotalUSGross-Budget)/Budget
 
 
 //2.b   Provide a 95 percent confidence interval for the mean U.S. ROI of movies. 
+
 ci mean ROI, level(95)
 
 
 //2.c   Show that the mean U.S. ROI is significantly larger than the 12 percent London cited. 
 //The mean of ROI is 29.29%, range between 13.48% and 45.1%
 //We set H0 is mean = 0.12, Ha is mean != 0.12
+
 ttest ROI == 0.12
+
 //The P value is 0.0325, which is smaller than 0.05, so we can reject the null hypothesis
 
 
