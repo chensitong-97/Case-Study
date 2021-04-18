@@ -120,6 +120,8 @@ test OpeningGross=4
 
 //7.d.Critique the statistical analysis in part (c). 
 
+rvpplot OpeningGross
+estat hettest
 //H0: beta1=4 , Ha: beta1 != 4
 //算出t值，和critical t对比
 //H0 can be rejected
