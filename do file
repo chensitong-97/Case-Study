@@ -158,14 +158,14 @@ reg lnTotalUSGross Budget Genre_Comedy MPAA_D Sequel KnownStory Summer Holiday C
 
 //8.b.Drop all variables from the regression that are not significant at a 10 percent level of significance. Report the final regression.
 
-//参考第五题
-//reg lnTotalUSGross Budget Genre_Comedy Summer OpeningTheatres OpeningGross CriticsOpinion,robust
 
+reg lnTotalUSGross Budget Genre_Comedy Summer OpeningTheatres OpeningGross CriticsOpinion,robust
+//InTotalUSGross=15.762+4.27*10^(-9)+0.1744 Genre_Comedy-0.2 Summer+0.0002 OpeningTheatres +3.28*10^(-8) OpeningGross+0.012 CriticsOpinion
 
 //8.c.Consider a movie with the characteristics of Flags of Our Fathers. Using the regression from part (b), provide a point estimate and a 95 percent prediction interval for the total U.S. gross revenue of a movie with such characteristics.
 
 //计算题
-
+//InTotalUSGross=15.762+4.27*10^(-9)*90000000-0.2*1+0.0002*1876 +3.28*10^(-8) 10245190+0.012* 79=17.6
 
 //8.d.Advise Griffith on how much he should be willing to invest in order to influence the critics to gain an extra ten points in the opinion score of a movie with the characteristics of Flags of Our Fathers, thereby earning such a film a score of eighty-nine points instead of seventy-nine points.
 
